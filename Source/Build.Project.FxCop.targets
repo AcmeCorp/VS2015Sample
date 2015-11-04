@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <!-- This file not needed? -->
+  
+  <PropertyGroup Condition="$(COMPUTERNAME.Contains('TFS')) == false">
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+    <CodeAnalysisCulture>en-GB</CodeAnalysisCulture>
+    <CodeAnalysisPath>..\..\Tools\Static Analysis Tools\FxCop</CodeAnalysisPath>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisOutputToConsole>true</CodeAnalysisOutputToConsole>
+  </PropertyGroup>
+
+  <Import Project="..\..\Tools\CodeAnalysis\Microsoft.CodeAnalysis.Targets" />
+
+</Project>
